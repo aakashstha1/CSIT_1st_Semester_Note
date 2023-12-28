@@ -1,0 +1,194 @@
+string1 = "ABC";
+string1 = string2;
+
+
+char line[40]
+scanf("%s",line);
+input : hello world 
+not possible because when we give space or tab or blanks or 
+new lines it will terminate the reading of the string.
+
+TO solve this we use array to hold each word seperately
+char word1[5]
+char word2[5]
+
+getchar()
+gets()
+putchar()
+puts()
+or Else we can use gets() function which is available in 
+<stdio.h>
+
+
+
+#include<stdio.h>
+int main(){
+char name[10];
+gets(name);
+printf("%s",name);
+return 0;
+}
+
+
+
+#include<stdio.h>
+int main(){
+char name[10];
+scanf("%5s",name);
+printf("%s",name);
+return 0;
+}
+
+
+
+#include<stdio.h>
+#include<conio.h>
+int main(){
+int x;
+x = 'a';
+printf("%d",x);
+x = 'a'-2;
+printf("%d",x);
+return 0;
+}
+
+
+
+we cannot assign one string to another directly we 
+cannot join two strings together by the simple 
+arithmetic addition.
+string3 = string1 + string2;
+string2 = string1 + "Hello";
+
+
+c does not suppport comparison of two strings
+name1 == name2
+
+
+fortunately, the c library supports a large number of 
+string handling functions that can be used to carry 
+out many of the 
+string manipulations.
+most commonly used string handling functions are:
+strcat() = Concatenates(join) two strings
+strcmp() = compares two strings
+strcpy() = copies one string over another
+strlen() = finds the length of a string
+
+
+
+strcat(string1,string2)
+#include <string.h>
+int main() {
+   char str1[100] = "This is ", str2[] = "first sem";
+   // concatenates str1 and str2
+   // the resultant string is stored in str1.
+   strcat(str1, str2);
+   puts(str1);
+   puts(str2);
+
+   return 0;
+}
+output
+This is first sem
+first sem
+
+
+
+we must make sure that the size of string1 is large 
+enough to accomodate the final string.
+
+
+strcmp(str1,str2)
+0 = if strings are equal
+>0 = if the first non-matching character in str1 is 
+greater (in ASCII) than that of str2.
+<0 = if the first non-matching character in str1 is 
+lower (in ASCII) than that of str2.
+
+#include <stdio.h>
+#include <string.h>
+int main() {
+  char str1[] = "abcd", str2[] = "abCd", str3[] = "abcd";
+  int result;
+
+  // comparing strings str1 and str2
+  result = strcmp(str1, str2);
+  printf("strcmp(str1, str2) = %d\n", result);
+  // comparing strings str1 and str3
+  result = strcmp(str1, str3);
+  printf("strcmp(str1, str3) = %d\n", result);
+
+  return 0;
+}
+
+OUTPUT
+strcmp(str1, str2) = 1
+strcmp(str1, str3) = 0
+
+strings str1 and str2 are not equal. Hence, 
+the result is a non-zero integer.
+strings str1 and str3 are equal. Hence, the result is 0.
+
+
+
+
+strcpy(str1,str2)
+#include <stdio.h>
+#include <string.h>
+int main() {
+  char str1[20] = "C programming";
+  char str2[20];
+  // copying str1 to str2
+  strcpy(str2, str1);
+  puts(str2); // C programming
+  return 0;
+}
+When you use strcpy(), the size of the destination 
+string should be large 
+enough to store the copied string. Otherwise, it may 
+result in undefined behavior.
+
+
+
+
+strlen(str)
+The strlen() function calculates the length of a given string.
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char a[20]="Program";
+    char b[20]={'P','r','o','g','\0'};
+
+    // using the %zu format specifier to print size_t
+    printf("Length of string a = %zu \n",strlen(a));
+    printf("Length of string b = %zu \n",strlen(b));
+
+    return 0;
+}
+
+OUTPUT
+Length of string a = 7 
+Length of string b = 4 
+
+
+
+#include<stdio.h>
+#include<conio.h>
+int main(){
+char country[15]="United Kingdom";
+printf("\n\n\n");
+printf("*123456789*\n");
+printf("-----\n");
+printf("%10s\n",country);
+printf("%7s\n",country);
+printf("%15.6s\n",country);
+printf("%-15.6s\n",country);
+printf("%15.0s\n",country);
+printf("%.3s\n",country);
+printf("%.6s\n",country);
+printf("%s\n",country);
+printf("------\n");
+return 0;
+}

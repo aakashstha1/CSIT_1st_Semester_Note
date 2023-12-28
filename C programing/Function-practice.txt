@@ -1,0 +1,171 @@
+Pass Individual Array Elements
+#include <stdio.h>
+void display(int age1, int age2) {
+  printf("%d\n", age1);
+  printf("%d\n", age2);
+}
+int main() {
+  int ageArray[] = {2, 8, 4, 12};
+
+  // pass second and third elements to display()
+  display(ageArray[1], ageArray[2]); 
+  return 0;
+}
+
+
+
+Pass Arrays to Functions
+// Program to calculate the sum of array elements by passing to a function 
+#include <stdio.h>
+float calculateSum(float num[]);
+int main() {
+  float result, num[] = {23.4, 55, 22.6, 3, 40.5, 18};
+
+  // num array is passed to calculateSum()
+  result = calculateSum(num); 
+  printf("Result = %.2f", result);
+  return 0;
+}
+float calculateSum(float num[]) {
+  float sum = 0.0;
+
+  for (int i = 0; i < 6; ++i) {
+    sum += num[i];
+  }
+
+  return sum;
+}
+
+
+
+Pass Multidimensional Arrays to a Function
+#include <stdio.h>
+void displayNumbers(int num[2][2]);
+int main() {
+  int num[2][2];
+  printf("Enter 4 numbers:\n");
+  for (int i = 0; i < 2; ++i) {
+    for (int j = 0; j < 2; ++j) {
+      scanf("%d", &num[i][j]);
+    }
+  }
+  // pass multi-dimensional array to a function
+  displayNumbers(num);
+  return 0;
+}
+void displayNumbers(int num[2][2]) {
+  printf("Displaying:\n");
+  for (int i = 0; i < 2; ++i) {
+    for (int j = 0; j < 2; ++j) {
+      printf("%d\n", num[i][j]);
+    }
+  }
+}
+
+
+
+Factorial program in c using loops
+#include<stdio.h>
+int main()
+{
+ int i,fact=1,number;
+ printf("Enter a number: ");
+  scanf("%d",&number);
+    for(i=1;i<=number;i++){
+      fact=fact*i;
+  }
+  printf("Factorial of %d is: %d",number,fact);
+return 0;
+}
+
+
+
+Factorial Program using recursion in C
+#include<stdio.h>  
+long factorial(int n)  
+{  
+  if (n == 0)  
+    return 1;  
+  else  
+    return(n * factorial(n-1));  
+}  
+   
+void main()  
+{  
+  int number;  
+  long fact;  
+  printf("Enter a number: ");  
+  scanf("%d", &number);   
+   
+  fact = factorial(number);  
+  printf("Factorial of %d is %ld\n", number, fact);  
+  return 0;  
+} 
+
+
+
+Fibonacci Series in C without recursion
+    #include<stdio.h>    
+    int main()    
+    {    
+     int n1=0,n2=1,n3,i,number;    
+     printf("Enter the number of elements:");    
+     scanf("%d",&number);    
+     printf("\n%d %d",n1,n2);//printing 0 and 1    
+     for(i=2;i<number;++i)//loop starts from 2 because 0 and 1 are already printed    
+     {    
+      n3=n1+n2;    
+      printf(" %d",n3);    
+      n1=n2;    
+      n2=n3;    
+     }  
+      return 0;  
+     } 
+
+
+
+Fibonacci Series using recursion in C
+    #include<stdio.h>    
+    void printFibonacci(int n){    
+        static int n1=0,n2=1,n3;    
+        if(n>0){    
+             n3 = n1 + n2;    
+             n1 = n2;    
+             n2 = n3;    
+             printf("%d ",n3);    
+             printFibonacci(n-1);    
+        }    
+    }    
+    int main(){    
+        int n;    
+        printf("Enter the number of elements: ");    
+        scanf("%d",&n);    
+        printf("Fibonacci Series: ");    
+        printf("%d %d ",0,1);    
+        printFibonacci(n-2);//n-2 because 2 numbers are already printed    
+      return 0;  
+     }   
+
+
+
+Sum of Natural Numbers Using Recursion
+#include <stdio.h>
+int addNumbers(int n);
+int main() {
+
+  int num;
+  printf("Enter a positive integer: ");
+  scanf("%d", &num);
+  printf("Sum = %d", addNumbers(num));
+  return 0;
+}
+
+int addNumbers(int n) {
+  if (n != 0)
+    return n + addNumbers(n - 1);
+  else
+    return n;
+}
+
+
+

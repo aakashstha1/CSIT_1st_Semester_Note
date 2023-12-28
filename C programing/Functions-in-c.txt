@@ -1,0 +1,192 @@
+A function is a block of statements that can perform a 
+particular task. As we all know, there is always at 
+least one function in C, and that is main().
+
+#include <stdio.h>
+int addNumbers(int a, int b);         // function prototype
+
+int main()
+{
+    int n1,n2,sum;
+    printf("Enters two numbers: ");
+    scanf("%d %d",&n1,&n2);
+    sum = addNumbers(n1, n2);        // function call
+    printf("sum = %d",sum);
+    return 0;
+}
+int addNumbers(int a, int b)         // function definition   
+{
+    int result;
+    result = a+b;
+    return result;                  // return statement
+}
+
+
+Function prototype
+
+A function prototype is simply the declaration of a 
+function that specifies function's name, parameters 
+and return type. It doesn't contain function body.
+
+A function prototype gives information to the compiler 
+that the function may later be used in the program.
+
+Syntax of function prototype
+returnType functionName(type1 argument1, type2 argument2, ...);
+
+In the above example, int addNumbers(int a, int b); is the 
+function prototype which provides the following information 
+to the compiler:
+
+    1)name of the function is addNumbers()
+    2)return type of the function is int
+    3)two arguments of type int are passed to the function
+
+The function prototype is not needed if the user-defined 
+function is defined before the main() function.
+
+Calling a function:
+Control of the program is transferred to the 
+user-defined function by calling it.
+
+Syntax of function call
+functionName(argument1, argument2, ...);
+
+In the above example, the function call is made 
+using addNumbers(n1, n2); statement inside the main() function.
+
+
+Function definition:
+Function definition contains the block of code to perform a specific 
+task. In our example, adding two numbers and returning it.
+
+Syntax of function definition
+returnType functionName(type1 argument1, type2 argument2, ...)
+{
+    //body of the function
+}
+
+
+
+When a function is called, the control of the program is transferred 
+to the function definition. And, the compiler starts executing the 
+codes inside the body of a function.
+
+
+
+In the example below, the function’s name is sum and 
+the data type is int. This task of this function is 
+to produce the sum of two numbers:
+
+int sum(int a,int b)
+{
+   return(a+b);
+}
+
+Below, the function is declared in main():
+
+void main()
+{
+     int sum(int,int); //function declaration
+     int x=5,y=6;
+     total = sum(x,y);
+}
+
+
+
+According to the example above, the formal parameters 
+are a and b, and the actual parameters are x and y.
+
+Essentially, the variables being passed in the function 
+call are actual parameters, and the variables being 
+initialized and used in the function are formal parameters.
+
+Note:Number of formal parameters = Number of actual parameters Always!
+
+Advantages of a function
+    1)A function can be used any number of times after it is defined once.
+
+    2)Functions make programs manageable and easy to understand.
+
+There are 4 types of functions:
+
+1. Functions with arguments and return values
+#include <stdio.h>
+void main()
+{
+  int sub(int,int); //function with return value and arguments
+  int x=10,y=7;
+  int res = sub(x,y);
+  printf("x-y = %d",res);
+}
+int sub(int a,int b) //function with return value and arguments
+{
+  return(a-b);  // return value
+}
+
+OUTPUT
+x-y = 3
+
+
+
+
+2. Functions with arguments and without return values
+This function has arguments, but it does not return a value:
+#include <stdio.h>
+int main()
+{
+  void sum(float,float); //function with arguments and no return value
+  float x=10.56,y=7.22;
+  sum(x,y);
+}
+void sum(float a,float b) //function with arguments and no return value
+{
+  float z = a+b;
+  printf("x + y = %f",z);
+}
+OUTPUT
+x + y = 17.780001
+
+
+
+
+3. Functions without arguments and with return values
+This function has no arguments, but it has a return value:
+#include<stdio.h>
+int main()
+{
+  int sum();
+  int c = sum();
+  printf("Sum = %d",c);
+}
+int sum() //function with no arguments and return data type
+{
+  int x=10,y=20,z=5;
+  printf("x = %d ; y = %d ; z = %d \n",x,y,z);
+  int sum = x+y+z;
+  return(sum);
+}
+OUTPUT
+x = 10 ; y = 20 ; z = 5 
+Sum = 35
+
+
+
+4. Functions without arguments and without return values
+This function has no arguments and no return value:
+#include<stdio.h>
+int main()
+{
+  void sum();
+  sum();
+}
+void sum() //function with no arguments and return data type
+{
+  int x=15,y=35,z=5;
+  printf("x = %d ; y = %d ; z = %d \n",x,y,z);
+  int sum = x+y+z;
+  printf("Sum = %d",sum);
+}
+OUTPUT
+x = 15 ; y = 35 ; z = 5 
+Sum = 55
